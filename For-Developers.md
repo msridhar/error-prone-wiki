@@ -11,11 +11,11 @@ $ mvn -Ptools.jar package
 </pre>
 
 If you don't want to remember the -P flag every time, just edit your `~/.m2/settings.xml`:
-{% highlight xml %}
+```xml
 <activeProfiles>
   <activeProfile>tools.jar</activeProfile>
 </activeProfiles>
-{% endhighlight %}
+```
 (if you don't have that file already, get the template at http://maven.apache.org/settings.html#Quick_Overview )
 
 You'll also need to configure your IDE to build with a supported JDK.
