@@ -72,22 +72,20 @@ $ javap -classpath ~/Projects/error-prone/out/production/idea-plugin/ -verbose c
 
 # Update wiki documentation
 
-We auto-generate wiki documentation for the bugs found by error-prone. To update the documentation, first check out the wiki repository:
+We auto-generate wiki documentation for the bugs found by error-prone. To update the documentation, first switch to the gh-pages branch:
 <pre>
-$ mkdir ~/error-prone.wiki
-$ cd ~/error-prone.wiki
-$ git clone https://code.google.com/p/error-prone.wiki/ ./
+$ git checkout --track origin/gh-pages
 </pre>
-Next, generate and copy the generated wiki files from the Maven release goal into the wiki directory:
+Next, generate and copy the generated wiki files from the Maven release goal into the pages branch:
 <pre>
 $ cd ~/error-prone
 $ mvn clean
 $ mvn -P run-annotation-processor compile site
-$ cp core/target/generated-wiki/*.wiki ~/error-prone.wiki/
+$ cp -rv core/target/generated-wiki/* ../gh-pages/
 </pre>
 Commit and push:
 <pre>
-$ cd ~/error-prone.wiki
+$ cd ~/gh-pages
 $ git add --all
 $ git commit -a -m "Update wiki for v1.x release"
 $ git push
