@@ -26,7 +26,7 @@ Let's say you want to write a checker and contribute it to the project.  Here ar
 
 Follow the Getting Started steps above.  Then create a branch in which to do your work.
 
-You should also add the check to the [Issue Tracker](https://code.google.com/p/error-prone/issues/list?can=2&q=Type%3DNewCheck) (if it is not already there), comment that you are taking the issue over, and change the status from "New" to "Accepted".
+You should also add the check to the [Issue Tracker](https://github.com/google/error-prone/issues) (if it is not already there), comment that you are taking the issue over, and change the status from "New" to "Accepted".
 
 ## Write your checker
 
