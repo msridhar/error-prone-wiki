@@ -1,5 +1,3 @@
-# Criteria for new checks
-
 error-prone gives us a powerful tool to disallow certain patterns from entering our Java code. We must be careful how we use it so that we benefit users without creating busywork for them. 
 
 ## Criteria for admitting new Severity.ERROR checks that are enabled by default
