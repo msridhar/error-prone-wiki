@@ -12,7 +12,22 @@ Prerequisite: we sign the released artifacts with GnuPG, so you'll need gpg on y
 Here is an example ticket to grant publish rights: 
 https://issues.sonatype.org/browse/OSSRH-7782
 
-You will need to set up a settings.xml file for maven in your ~/.m2 directory. if you don't have that file already, get the template at http://maven.apache.org/settings.html#Quick_Overview. Then add various server options: https://issues.sonatype.org/browse/OSSRH-3462?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&focusedCommentId=162066#comment-162066
+You will need to set up a settings.xml file for maven in your ~/.m2 directory. if you don't have that file already, get the [template](http://maven.apache.org/settings.html#Quick_Overview) and add the following server entries (see https://issues.sonatype.org/browse/OSSRH-3462?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&focusedCommentId=162066#comment-162066):
+
+    <server>
+      <id>google-releases</id>
+      <username>username</username>
+      <password>***</password>
+    </server>
+    <server>
+      <id>sonatype-nexus-snapshots</id>
+      <username>username</username>
+      <password>***</password>
+    </server>
+    <server>
+      <username>username</username>
+      <password>***</password>
+    </server>
 
 Currently we build the output JARs with JDK7. You can check what JDK version Maven is using by typing:
 <pre>
@@ -39,15 +54,7 @@ If you get a key error, you might need to upload this output to http://pgp.mit.e
 *Update installation instructions*
 
 Update the version of the error-prone-core dependency in the example pom.xml file here:
-https://code.google.com/p/error-prone/wiki/InstallingErrorProne#Maven
-
-*Update submodule versions*
-
-The release:update-versions plugin only updates the versions of submodules that were active during the release, so manually bump the versions of the jdk6 and jdk8 submodules.
-
-Example: https://code.google.com/p/error-prone/source/detail?r=cc09335b3a7f300cd6a41d997c76e78d44331e6a
-
-Check if http://jira.codehaus.org/browse/MNG-624 is fixed yet.
+https://github.com/google/error-prone/blob/gh-pages/installation.md
 
 # Update IDEA plugin
 
