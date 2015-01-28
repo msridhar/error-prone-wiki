@@ -34,10 +34,10 @@ Currently we build the output JARs with JDK7. You can check what JDK version Mav
 $ mvn --version
 </pre>
 
-Look at the pom.xml file to see what version is being snapshotted, e.g. 0.6-SNAPSHOT means we want to release 0.6.
+Look at the pom.xml file to see what version is being snapshotted, e.g. 2.0.1-SNAPSHOT means we want to release 2.0.1.
 
 <pre>
-$ mvn release:prepare -Dtag=v2.X
+$ mvn release:prepare -Dtag=v2.X.X
 # accept the default suggestions
 $ mvn release:perform
 </pre>
