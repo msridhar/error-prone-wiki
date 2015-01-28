@@ -51,7 +51,7 @@ https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage
 If you get a key error, you might need to upload this output to http://pgp.mit.edu:
 `gpg -a --export`
 
-*Update installation instructions*
+# Update installation instructions
 
 Update the version of the error-prone-core dependency in the example pom.xml file here:
 https://github.com/google/error-prone/blob/gh-pages/installation.md
