@@ -34,12 +34,12 @@ Currently we build the output JARs with JDK7. You can check what JDK version Mav
 $ mvn --version
 </pre>
 
-Look at the pom.xml file to see what version is being snapshotted, eg. 0.6-SNAPSHOT means we want to release 0.6
+Look at the pom.xml file to see what version is being snapshotted, e.g. 0.6-SNAPSHOT means we want to release 0.6.
 
 <pre>
-$ mvn release:prepare -Dtag=v0.x
+$ mvn release:prepare -Dtag=v2.X
 # accept the default suggestions
-$ mvn release:perform -Darguments=-Dgpg.passphrase=[XXX] 
+$ mvn release:perform
 </pre>
 
 Now the release is "staged" at Sonatype.
