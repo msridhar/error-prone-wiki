@@ -1,18 +1,30 @@
-# Keeping the build green
+## Keeping the build green
+
 We run a [continuous build](https://travis-ci.org/google/error-prone).
 
 [![Build Status](https://travis-ci.org/google/error-prone.svg?branch=master)](https://travis-ci.org/google/error-prone)
 
 If the build is broken, then we can't do a release. Keep the build green!
 
-# Release to Maven Central
+## Prerequisites:
 
-Prerequisite: we sign the released artifacts with GnuPG, so you'll need gpg on your path, and also a default key installed (run `gpg --gen-key`). You also need to upload your ASCII-armored public key to a common repo like http://pgp.mit.edu. You also need to have permission with sonatype, which requires following instructions like steps 2 & 3 of the  here: https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide. (more info on sonatype and google: http://code.google.com/p/google-maven-repository/wiki/GuidelinesForGoogleMavenProjects).
+### GnuPG
 
-Here is an example ticket to grant publish rights: 
+We sign the released artifacts with GnuPG, so you'll need gpg on your path, and also a default key installed (run `gpg --gen-key`). You also need to upload your ASCII-armored public key to a common repo like http://pgp.mit.edu.
+
+### Sonatype
+
+You also need to have permission with sonatype.
+
+- follow instructions 2 & 3 here: https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide
+- more info on sonatype and google: http://code.google.com/p/google-maven-repository/wiki/GuidelinesForGoogleMavenProjects).
+- example ticket to grant publish rights: 
 https://issues.sonatype.org/browse/OSSRH-7782
 
-You will need to set up a settings.xml file for maven in your ~/.m2 directory. if you don't have that file already, get the [template](http://maven.apache.org/settings.html#Quick_Overview) and add the following server entries (see https://issues.sonatype.org/browse/OSSRH-3462?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&focusedCommentId=162066#comment-162066):
+### Maven settings
+
+Set up a settings.xml file for maven in your ~/.m2 directory. If you don't have that file already, get the [template](http://maven.apache.org/settings.html#Quick_Overview) and add the following server entries ([related discussion](https://issues.sonatype.org/browse/OSSRH-3462?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&focusedCommentId=162066#comment-162066)):
+
 
     <server>
       <id>google-releases</id>
@@ -29,34 +41,33 @@ You will need to set up a settings.xml file for maven in your ~/.m2 directory. i
       <password>***</password>
     </server>
 
-Currently we build the output JARs with JDK7. You can check what JDK version Maven is using by typing:
-<pre>
-$ mvn --version
-</pre>
+### JDK7
+
+Currently we build the output JARs with JDK7. You can check what JDK version Maven is using with `mvn --version`.
+
+## Releasing
 
 Look at the pom.xml file to see what version is being snapshotted, e.g. 2.0.1-SNAPSHOT means we want to release 2.0.1.
 
-<pre>
-$ mvn release:prepare -Dtag=v2.X.X
-# accept the default suggestions
-$ mvn release:perform
-</pre>
+    $ mvn release:prepare -Dtag=v2.X.X
+    # accept the default suggestions
+    $ mvn release:perform
 
 Now the release is "staged" at Sonatype.
+
 Go to https://oss.sonatype.org and login, then take a look at the staged artifacts. Check that the right classes appear in the right jars, and the sizes are reasonable.
 
-Then, "close" and then "release" the staging repository to make the release public. More instructions in case you run into trouble:
-https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-8.ReleaseIt
+Then, "close" and then "release" the staging repository to make the release public. ([more instructions](https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-8.ReleaseIt
+) in case you run into trouble.)
 
-If you get a key error, you might need to upload this output to http://pgp.mit.edu:
-`gpg -a --export`
+If you get a key error, you might need to upload this output to http://pgp.mit.edu: `gpg -a --export`
 
-# Update installation instructions
+### Update installation instructions
 
 Update the version of the error-prone-core dependency in the example pom.xml file here:
 https://github.com/google/error-prone/blob/gh-pages/installation.md
 
-# Update IDEA plugin
+## Update IDEA plugin
 
 (note: we'd like the plugin to be owned by JetBrains at some point, so they'd take responsibility for keeping it working. Alex has a thread with Sergey Simonchek to follow up on.)
 
@@ -76,6 +87,6 @@ $ javap -classpath ~/Projects/error-prone/out/production/idea-plugin/ -verbose c
 </pre>
 6. Go to http://plugins.jetbrains.com/plugin/edit?pluginId=7349 (logged in as Alex?) and upload the new JAR.
 
-# Update documentation
+## Update documentation
 
 The [bug pattern documentation](http://errorprone.info/bugpatterns) and [javadoc](http://errorprone.info/api/latest) is automatically updated when the continuous build passes by [this script](https://github.com/google/error-prone/blob/master/util/generate-latest-docs.sh).
