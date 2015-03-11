@@ -14,6 +14,8 @@ You'll also need to configure your IDE to build with a supported JDK.
 
 A Maven plugin for your IDE should setup the project very conveniently, and a git plugin can simplify source code management. The core developers use IntelliJ IDEA or Eclipse.
 
+For Eclipse, we recommend installing the `m2e-apt` plugin and enabling `preferences > maven > annotation processing` so [AutoValue](https://github.com/google/auto/tree/master/value) is run automatically.
+
 It's very useful and recommended to locate the sources for your JDK and attach them in the IDE, so you can navigate into the javac libraries when needed.
 
 We generally follow the Sun style guide, and limit lines to 100 cols.
