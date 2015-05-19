@@ -12,6 +12,12 @@ If the build is broken, then we can't do a release. Keep the build green!
 
 We sign the released artifacts with GnuPG, so you'll need gpg on your path, and also a default key installed (run `gpg --gen-key`). You also need to upload your ASCII-armored public key to a common repo like http://pgp.mit.edu.
 
+If you want a chance to remember your gpg key before starting `mvn release`, you can use the following incantation. (Courtesy of [SO](http://stackoverflow.com/a/11484411).)
+
+```
+$ echo "1234" | gpg --no-use-agent -o /dev/null --local-user "Your Name <you@example.com>" -as - && echo "The correct passphrase was entered for this key"
+```
+
 ### Sonatype
 
 You also need to have permission with sonatype.
