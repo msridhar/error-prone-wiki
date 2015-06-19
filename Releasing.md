@@ -70,8 +70,12 @@ If you get a key error, you might need to upload this output to http://pgp.mit.e
 
 ### Update installation instructions
 
-Update the version of the error-prone-core dependency in the example pom.xml file here:
+Update the version of the error_prone_core dependency in the example pom.xml file here:
 https://github.com/google/error-prone/blob/gh-pages/installation.md
+
+### Update examples
+
+Update the version of the error_prone_core dependency in the various examples to the new version.  Do this for `examples/gradle/build.gradle` and `examples/maven/pom.xml`.
 
 ## Update IDEA plugin
 
