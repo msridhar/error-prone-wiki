@@ -71,7 +71,7 @@ If you get a key error, you might need to upload this output to http://pgp.mit.e
 ### Update installation instructions
 
 Update the version of the error_prone_core dependency in the example pom.xml file here:
-https://github.com/google/error-prone/blob/gh-pages/installation.md
+https://github.com/google/error-prone/blob/gh-pages/docs/installation.md
 
 ### Update examples
 
