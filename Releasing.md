@@ -100,3 +100,9 @@ $ javap -classpath ~/Projects/error-prone/out/production/idea-plugin/ -verbose c
 ## Update documentation
 
 The [bug pattern documentation](http://errorprone.info/bugpatterns) and [javadoc](http://errorprone.info/api/latest) is automatically updated when the continuous build passes by [this script](https://github.com/google/error-prone/blob/master/util/generate-latest-docs.sh).
+
+## Tell the world
+
+Write release notes (see [this example](https://groups.google.com/d/msg/error-prone-announce/-f6Cv6jKvig/cFCdhYuC5lwJ)) and email them to error-prone-announce@googlegroups.com and error-prone-discuss@googlegroups.com.  
+
+Look at the commits since the last release to help you write the release notes.  Use this command: `git log v2.0.4`
