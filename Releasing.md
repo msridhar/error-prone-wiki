@@ -75,7 +75,8 @@ https://github.com/google/error-prone/blob/gh-pages/docs/installation.md
 
 ### Update examples
 
-Update the version of the error_prone_core dependency in the various examples to the new version.  Do this for `examples/gradle/build.gradle` and `examples/maven/pom.xml`.
+Update the version of the error_prone_core dependency in the various examples to the new version.  Do
+this for `examples/ant/ant_fork/build.xml`, `examples/gradle/build.gradle`, and `examples/maven/pom.xml`.
 
 ## Update IDEA plugin
 
