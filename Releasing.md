@@ -84,12 +84,12 @@ this for `examples/ant/ant_fork/build.xml`, `examples/gradle/build.gradle`, and 
 
 1. Sync your working copy to a tagged release:
 <pre>
-$ git checkout v1.0.8
+$ git checkout v2.0.6
 </pre>
 
-2. Edit idea-plugin/META-INF/plugin.xml : version tag to match the synced VCS tag.
+2. Edit `idea_plugin/META-INF/plugin.xml` : version tag to match the synced VCS tag.
 3. Make sure your Compiler -> Java Compiler has Project bytecode version 1.6 (makes -target 1.6)
-4. In IDEA, select the idea-plugin module and use menus: Build -> Prepare plugin module 'idea-plugin' for Deployment. It builds and points you to the JAR file.
+4. In IDEA, select the idea_plugin module and use menus: Build -> Prepare plugin module 'idea_plugin' for Deployment. It builds and points you to the JAR file.
 5. Verify that the resulting JAR will work when IDEA is run on JRE 1.6:
 <pre>
 $ javap -classpath ~/Projects/error-prone/out/production/idea-plugin/ -verbose com.google.errorprone.intellij.ErrorProneIdeaCompiler | grep version:
