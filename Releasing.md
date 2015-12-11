@@ -82,7 +82,7 @@ this for `examples/ant/ant_fork/build.xml`, `examples/gradle/build.gradle`, and 
 
 TODO: update the plugin, and fix these instructions
 
-An [earlier version](https://github.com/google/error-prone/wiki/Releasing/229bf30bb8da26dc745379dd313b197203050a7a) of this page had instructions that were wildly out of date. The plugin hasn't been updated in a while: error-prone/issues/374
+An [earlier version](https://github.com/google/error-prone/wiki/Releasing/229bf30bb8da26dc745379dd313b197203050a7a) of this page had instructions that were wildly out of date. The plugin hasn't been updated in a while: [error-prone/issues/374](https://github.com/google/error-prone/issues/374)
 
 ## Update documentation
 
