@@ -47,9 +47,9 @@ Set up a settings.xml file for maven in your ~/.m2 directory. If you don't have 
       <password>***</password>
     </server>
 
-### JDK7
+### JDK8
 
-Currently we build the output JARs with JDK7. You can check what JDK version Maven is using with `mvn --version`.
+Currently we build the output JARs with JDK8. You can check what JDK version Maven is using with `mvn --version`.
 
 ## Releasing
 
@@ -80,23 +80,9 @@ this for `examples/ant/ant_fork/build.xml`, `examples/gradle/build.gradle`, and 
 
 ## Update IDEA plugin
 
-(note: we'd like the plugin to be owned by JetBrains at some point, so they'd take responsibility for keeping it working. Alex has a thread with Sergey Simonchek to follow up on.)
+TODO: update the plugin, and fix these instructions
 
-1. Sync your working copy to a tagged release:
-<pre>
-$ git checkout v2.0.6
-</pre>
-
-2. Edit `idea_plugin/META-INF/plugin.xml` : version tag to match the synced VCS tag.
-3. Make sure your Compiler -> Java Compiler has Project bytecode version 1.6 (makes -target 1.6)
-4. In IDEA, select the idea_plugin module and use menus: Build -> Prepare plugin module 'idea_plugin' for Deployment. It builds and points you to the JAR file.
-5. Verify that the resulting JAR will work when IDEA is run on JRE 1.6:
-<pre>
-$ javap -classpath ~/Projects/error-prone/out/production/idea-plugin/ -verbose com.google.errorprone.intellij.ErrorProneIdeaCompiler | grep version:
-  minor version: 0
-  major version: 50
-</pre>
-6. Go to http://plugins.jetbrains.com/plugin/edit?pluginId=7349 (logged in as Alex?) and upload the new JAR.
+An [earlier version](https://github.com/google/error-prone/wiki/Releasing/229bf30bb8da26dc745379dd313b197203050a7a) of this page had instructions that were wildly out of date. The plugin hasn't been updated in a while: error-prone/issues/374
 
 ## Update documentation
 
