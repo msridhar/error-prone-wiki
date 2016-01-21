@@ -22,7 +22,8 @@ $ echo "1234" | gpg --no-use-agent -o /dev/null --local-user "Your Name <you@exa
 
 You also need to have permission with sonatype.
 
-- follow instructions 2 & 3 here: https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide
+- follow instructions 2 & 3 here:
+  - TODO(cushon): the [previous version](https://web.archive.org/web/20120405185706/https://docs.sonatype.org/display/repository/sonatype+oss+maven+repository+usage+guide) had detailed information about creating a JIRA ticket, the [current version](http://central.sonatype.org/pages/ossrh-guide.html) does not. Did the documentation move, or the process change, or ... ?
 - more info on sonatype and google: http://code.google.com/p/google-maven-repository/wiki/GuidelinesForGoogleMavenProjects).
 - example ticket to grant publish rights: 
 https://issues.sonatype.org/browse/OSSRH-7782
@@ -78,20 +79,26 @@ https://github.com/google/error-prone/blob/master/README.md
 ### Update examples
 
 Update the version of the error_prone_core dependency in the various examples to the new version.  Do
-this for `examples/ant/ant_fork/build.xml`, `examples/gradle/build.gradle`, and `examples/maven/pom.xml`.
+this for:
 
-## Update IDEA plugin
-
-TODO: update the plugin, and fix these instructions
-
-An [earlier version](https://github.com/google/error-prone/wiki/Releasing/229bf30bb8da26dc745379dd313b197203050a7a) of this page had instructions that were wildly out of date. The plugin hasn't been updated in a while: [error-prone/issues/374](https://github.com/google/error-prone/issues/374)
+* `examples/ant/ant_fork/build.xml`
+* `examples/gradle/build.gradle`
+* `examples/maven/pom.xml`
 
 ## Update documentation
 
-The [bug pattern documentation](http://errorprone.info/bugpatterns) and [javadoc](http://errorprone.info/api/latest) is automatically updated when the continuous build passes by [this script](https://github.com/google/error-prone/blob/master/util/generate-latest-docs.sh).
+This part is automatic: the [bug pattern documentation](http://errorprone.info/bugpatterns) and [javadoc](http://errorprone.info/api/latest) is automatically updated when the continuous build passes by [this script](https://github.com/google/error-prone/blob/master/util/generate-latest-docs.sh).
 
 ## Tell the world
 
-Write release notes (see [this example](https://groups.google.com/d/msg/error-prone-announce/-f6Cv6jKvig/cFCdhYuC5lwJ)) and email them to error-prone-announce@googlegroups.com and error-prone-discuss@googlegroups.com.  
+Write release notes (see [this example](https://groups.google.com/d/msg/error-prone-announce/-f6Cv6jKvig/cFCdhYuC5lwJ)) and email them to `error-prone-announce@googlegroups.com` and `error-prone-discuss@googlegroups.com`.  
 
-Look at the commits since the last release to help you write the release notes.  Use this command: `git log v2.0.4`
+Look at the commits since the last release to help you write the release notes. Use this command: `git log v2.0.4`
+
+## Optional
+
+### Update IDEA plugin
+
+TODO(cushon): update the plugin, and fix these instructions
+
+An [earlier version](https://github.com/google/error-prone/wiki/Releasing/229bf30bb8da26dc745379dd313b197203050a7a) of this page had instructions that were wildly out of date. The plugin hasn't been updated in a while: [error-prone/issues/374](https://github.com/google/error-prone/issues/374)
