@@ -30,9 +30,10 @@ https://issues.sonatype.org/browse/OSSRH-7782
 
 ### Maven settings
 
-Set up a settings.xml file for maven in your ~/.m2 directory. If you don't have that file already, get the [template](http://maven.apache.org/settings.html#Quick_Overview) and add the following server entries ([related discussion](https://issues.sonatype.org/browse/OSSRH-3462?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&focusedCommentId=162066#comment-162066)). The username and password are your Sonatype username and password:
+Set up a settings.xml file for maven in your ~/.m2 directory.  Add the following server entries ([related discussion](https://issues.sonatype.org/browse/OSSRH-3462?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&focusedCommentId=162066#comment-162066)). The username and password are your Sonatype username and password.  The whole file should look like:
 
-
+```xml
+  <servers>
     <server>
       <id>google-releases</id>
       <username>username</username>
@@ -48,6 +49,8 @@ Set up a settings.xml file for maven in your ~/.m2 directory. If you don't have 
       <username>username</username>
       <password>***</password>
     </server>
+  </servers>
+```
 
 ### JDK8
 
