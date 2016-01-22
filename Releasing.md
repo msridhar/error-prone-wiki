@@ -30,28 +30,30 @@ https://issues.sonatype.org/browse/OSSRH-7782
 
 ### Maven settings
 
-Set up a settings.xml file for maven in your ~/.m2 directory.  Add the following server entries ([related discussion](https://issues.sonatype.org/browse/OSSRH-3462?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&focusedCommentId=162066#comment-162066)). The username and password are your Sonatype username and password.  The whole file should look like:
+Create a settings.xml file for maven in your ~/.m2 directory.  The file should look like this, where username and password are your Sonatype username and password:
 
 ```xml
-  <servers>
-    <server>
-      <id>google-releases</id>
-      <username>username</username>
-      <password>***</password>
-    </server>
-    <server>
-      <id>sonatype-nexus-snapshots</id>
-      <username>username</username>
-      <password>***</password>
-    </server>
-    <server>
-      <id>sonatype-nexus-staging</id>
-      <username>username</username>
-      <password>***</password>
-    </server>
-  </servers>
+<servers>
+  <server>
+    <id>google-releases</id>
+    <username>username</username>
+    <password>***</password>
+  </server>
+  <server>
+    <id>sonatype-nexus-snapshots</id>
+    <username>username</username>
+    <password>***</password>
+  </server>
+  <server>
+    <id>sonatype-nexus-staging</id>
+    <username>username</username>
+    <password>***</password>
+   </server>
+</servers>
 ```
 
+Debugging notes: [related discussion](https://issues.sonatype.org/browse/OSSRH-3462?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&focusedCommentId=162066#comment-162066)).
+ 
 ### JDK8
 
 Currently we build the output JARs with JDK8. You can check what JDK version Maven is using with `mvn --version`.
