@@ -37,17 +37,17 @@ Create a settings.xml file for maven in your ~/.m2 directory.  The file should l
   <server>
     <id>google-releases</id>
     <username>username</username>
-    <password>***</password>
+    <password>password</password>
   </server>
   <server>
     <id>sonatype-nexus-snapshots</id>
     <username>username</username>
-    <password>***</password>
+    <password>password</password>
   </server>
   <server>
     <id>sonatype-nexus-staging</id>
     <username>username</username>
-    <password>***</password>
+    <password>password</password>
    </server>
 </servers>
 ```
