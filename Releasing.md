@@ -44,6 +44,7 @@ Set up a settings.xml file for maven in your ~/.m2 directory. If you don't have 
       <password>***</password>
     </server>
     <server>
+      <id>sonatype-nexus-staging</id>
       <username>username</username>
       <password>***</password>
     </server>
