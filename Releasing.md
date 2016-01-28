@@ -20,13 +20,11 @@ $ echo "1234" | gpg --no-use-agent -o /dev/null --local-user "Your Name <you@exa
 
 ### Sonatype
 
-You also need to have permission with sonatype.
+First, you will need a Sonatype account.  Create one at https://issues.sonatype.org.  **Use a unique, throwaway password.** You will need to save it in cleartext in a later step.
 
-- follow instructions 2 & 3 here:
-  - TODO(cushon): the [previous version](https://web.archive.org/web/20120405185706/https://docs.sonatype.org/display/repository/sonatype+oss+maven+repository+usage+guide) had detailed information about creating a JIRA ticket, the [current version](http://central.sonatype.org/pages/ossrh-guide.html) does not. Did the documentation move, or the process change, or ... ?
-- more info on sonatype and google: http://code.google.com/p/google-maven-repository/wiki/GuidelinesForGoogleMavenProjects).
-- example ticket to grant publish rights: 
-https://issues.sonatype.org/browse/OSSRH-7782
+Second, you will need permission to upload to the Error Prone Sonatype repository.  Create a JIRA ticket requesting this permission. It should look just like this example: https://issues.sonatype.org/browse/OSSRH-20124
+
+More info on Sonatype and Google: http://code.google.com/p/google-maven-repository/wiki/GuidelinesForGoogleMavenProjects
 
 ### Maven settings
 
