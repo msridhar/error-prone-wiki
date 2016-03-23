@@ -31,6 +31,7 @@ More info on Sonatype and Google: http://code.google.com/p/google-maven-reposito
 Create a settings.xml file for maven in your ~/.m2 directory.  The file should look like this, where username and password are your Sonatype username and password:
 
 ```xml
+<settings>
 <servers>
   <server>
     <id>google-releases</id>
@@ -48,6 +49,7 @@ Create a settings.xml file for maven in your ~/.m2 directory.  The file should l
     <password>password</password>
    </server>
 </servers>
+</settings>
 ```
 
 Debugging notes: [related discussion](https://issues.sonatype.org/browse/OSSRH-3462?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&focusedCommentId=162066#comment-162066)).
