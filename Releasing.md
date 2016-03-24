@@ -79,8 +79,6 @@ If you get a key error, you might need to upload this output to http://pgp.mit.e
 
 Update the version of the error_prone_core dependency in the example pom.xml file here:
 https://github.com/google/error-prone/blob/gh-pages/docs/installation.md
-And in the README here:
-https://github.com/google/error-prone/blob/master/README.md
 
 ### Update examples
 
@@ -90,6 +88,8 @@ this for:
 * `examples/ant/ant_fork/build.xml`
 * `examples/gradle/build.gradle`
 * `examples/maven/pom.xml`
+
+Sample commit: https://github.com/google/error-prone/commit/739c6c155827209fcbee7f056381415e31094768
 
 ## Update documentation
 
