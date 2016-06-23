@@ -88,6 +88,9 @@ this for:
 * `examples/ant/ant_fork/build.xml`
 * `examples/gradle/build.gradle`
 * `examples/maven/pom.xml`
+* `examples/plugin/bazel/WORKSPACE`
+* `examples/plugin/maven/hello/pom.xml`
+* `examples/plugin/maven/sample_plugin/pom.xml`
 
 Sample commit: https://github.com/google/error-prone/commit/739c6c155827209fcbee7f056381415e31094768
 
