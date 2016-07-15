@@ -102,7 +102,7 @@ This part is automatic: the [bug pattern documentation](http://errorprone.info/b
 
 Write release notes (see [this example](https://groups.google.com/d/msg/error-prone-announce/-f6Cv6jKvig/cFCdhYuC5lwJ)) and email them to `error-prone-announce@googlegroups.com` and `error-prone-discuss@googlegroups.com`.  
 
-Look at the commits since the last release to help you write the release notes. Use this command: `git log v2.0.4`
+Look at the commits since the last release to help you write the release notes. Use this command: `git log v2.0.9..HEAD`
 
 ## Optional
 
