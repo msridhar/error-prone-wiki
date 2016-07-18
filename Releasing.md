@@ -89,6 +89,8 @@ this for:
 * `examples/gradle/build.gradle`
 * `examples/maven/pom.xml`
 * `examples/plugin/bazel/WORKSPACE`
+* `examples/plugin/gradle/build.gradle`
+* `examples/plugin/gradle/sample_plugin/build.gradle`
 * `examples/plugin/maven/hello/pom.xml`
 * `examples/plugin/maven/sample_plugin/pom.xml`
 
