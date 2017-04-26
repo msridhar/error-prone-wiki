@@ -289,7 +289,7 @@ that should be identified by a BugChecker as a match.
 > Thus, the diagnostic comment should immediately precede the method definition,
 > not the return expression.
 
-````java
+```java
 public class DoNotReturnNullPositiveCases {
   // BUG: Diagnostic contains: Do not return null.
   public Object returnsNull() {
