@@ -7,8 +7,7 @@ automatically. In this tutorial we will suppose that we want to ban the use of
 #### Avoiding `return null;` statements
 
 It is well known that misuse of `null` can cause a staggering variety of bugs.
-You can find more [details in this document]
-(https://github.com/google/guava/wiki/UsingAndAvoidingNullExplained). Let us
+You can find more [details in this document][guava-nullbad]. Let us
 suppose that we agree with the arguments in favor of avoiding null, so as a
 first step we decide to avoid any `return null;` statements. Put plainly, we
 want to avoid code like this:
@@ -396,3 +395,4 @@ public class DoNotReturnNullNegativeCases {
   }
 }
 ```
+[guava-nullbad]: https://github.com/google/guava/wiki/UsingAndAvoidingNullExplained
