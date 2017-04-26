@@ -1,7 +1,7 @@
 # Getting started
 
-We use the Maven build system. We are using version 3. [Download Maven]
-(http://maven.apache.org/download.html)
+We use the Maven build system. We are using version 3. 
+[Download Maven](http://maven.apache.org/download.html)
 
 We test with OpenJDK 7 and 8, so those are currently recommended. Do whatever
 your system requires to use one of those JDKs.
@@ -33,23 +33,21 @@ the steps you should follow.
 Follow the Getting Started steps above. Then create a branch in which to do your
 work.
 
-You should also add the check to the [Issue Tracker]
-(https://github.com/google/error-prone/issues) (if it is not already there),
-comment that you are taking the issue over, and change the status from "New" to
-"Accepted".
+You should also add the check to the [Issue Tracker][issue-tracker]
+(if it is not already there), comment that you are taking the issue over,
+and change the status from "New" to "Accepted".
 
 ### IDE Configuration
 
 #### Eclipse
 
 We recommend installing the `m2e-apt` plugin and enabling `preferences > maven >
-annotation processing` so [AutoValue]
-(https://github.com/google/auto/tree/master/value) is run automatically.
+annotation processing` so [AutoValue][autovalue] is run automatically.
 
 #### Intellij
 
-We provide an intellij code style that conforms to [Google Java Style]
-(https://google-styleguide.googlecode.com/svn/trunk/javaguide.html):
+We provide an intellij code style that conforms to 
+[Google Java Style][google-style]:
 https://github.com/google/error-prone/blob/master/.idea/GoogleStyle.xml
 
 To install it, copy `GoogleStyle.xml` to your intellij configuration directory
@@ -60,8 +58,7 @@ select 'Google Style' in `Settings > Editor > Code Style`.
 ## Write your checker
 
 Checkers are in the package com.google.errorprone.bugpatterns. You can follow
-the tutorial on writing a check [here]
-(https://github.com/google/error-prone/wiki/Writing-a-check). Don't forget to
+the tutorial on writing a check [here][writing-a-check]. Don't forget to
 write tests!
 
 ## Request a code review
@@ -69,3 +66,8 @@ write tests!
 A member of error-prone team needs to review your code and merge it into the
 mainline project. We use [github](https://github.com/google/error-prone/pulls)
 for code reviews.
+
+[issue-tracker]: https://github.com/google/error-prone/issues
+[autovalue]: https://github.com/google/auto/tree/master/value
+[google-style]: https://google.github.io/styleguide/javaguide.html
+[writing-a-check]: https://github.com/google/error-prone/wiki/Writing-a-check
