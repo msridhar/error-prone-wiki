@@ -60,13 +60,21 @@ Currently we build the output JARs with JDK8. You can check what JDK version Mav
 
 ## Releasing
 
+First, supply your SSH passphrase to avoid getting asked while running Maven commands: 
+
+```shell
+ssh-add
+```
+
 Look at the pom.xml file to see what version is being snapshotted, e.g. 2.0.1-SNAPSHOT means we want to release 2.0.1.
 
 As long as we're using the JUnit 13 SNAPSHOT, pass `-DignoreSnapshots=true` to `release:prepare`.
 
-    $ mvn release:prepare -Dtag=v2.X.X
-    # accept the default suggestions
-    $ mvn release:perform
+```shell
+mvn release:prepare -Dtag=v2.X.X
+# accept the default suggestions
+mvn release:perform
+```
 
 Now the release is "staged" at Sonatype.
 
