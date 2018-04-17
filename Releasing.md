@@ -71,7 +71,7 @@ Look at the pom.xml file to see what version is being snapshotted, e.g. 2.0.1-SN
 As long as we're using the JUnit 13 SNAPSHOT, pass `-DignoreSnapshots=true` to `release:prepare`.
 
 ```shell
-mvn release:prepare -Dtag=v2.X.X
+mvn release:prepare -Dtag=v2.X.X -DignoreSnapshots=true
 # accept the default suggestions
 mvn release:perform
 ```
