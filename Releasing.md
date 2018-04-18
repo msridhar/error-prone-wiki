@@ -32,23 +32,23 @@ Create a settings.xml file for maven in your ~/.m2 directory.  The file should l
 
 ```xml
 <settings>
-<servers>
-  <server>
-    <id>google-releases</id>
-    <username>username</username>
-    <password>password</password>
-  </server>
-  <server>
-    <id>sonatype-nexus-snapshots</id>
-    <username>username</username>
-    <password>password</password>
-  </server>
-  <server>
-    <id>sonatype-nexus-staging</id>
-    <username>username</username>
-    <password>password</password>
-   </server>
-</servers>
+  <servers>
+    <server>
+      <id>sonatype-nexus-snapshots</id>
+      <username>username</username>
+      <password>password</password>
+    </server>
+    <server>
+      <id>sonatype-nexus-staging</id>
+      <username>username</username>
+      <password>password</password>
+    </server>
+    <server>
+      <id>google-releases</id>
+      <username>username</username>
+      <password>password</password>
+    </server>
+  </servers>
 </settings>
 ```
 
