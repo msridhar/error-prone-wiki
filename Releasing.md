@@ -115,6 +115,8 @@ Look at the commits since the last release to help you write the release notes. 
 
 TODO(eaftan): Script writing the release notes.
 
+> Tip: Find issues fixed with `git log v2.2.0..HEAD | grep -o "#[0-9]\+" | sort | tr '\n' ',' | sed 's/,/, /'g`
+
 ## Optional
 
 ### Update IDEA plugin
