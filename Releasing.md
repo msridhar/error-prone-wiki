@@ -105,9 +105,7 @@ sed -i "s/$OLD_SNAPSHOT/$NEW_SNAPSHOT/g" examples/ant/ant_fork/build.xml example
 
 Sample commit: https://github.com/google/error-prone/commit/739c6c155827209fcbee7f056381415e31094768
 
-## Update documentation
-
-This part is automatic: the [bug pattern documentation](http://errorprone.info/bugpatterns) and [javadoc](http://errorprone.info/api/latest) is automatically updated when the continuous build passes by [this script](https://github.com/google/error-prone/blob/master/util/generate-latest-docs.sh).
+> TIP: Do this in the Google-internal version, not Github, to avoid two-way syncing issues.
 
 ## Tell the world
 
