@@ -113,6 +113,8 @@ Write release notes (see [this example](https://groups.google.com/d/msg/error-pr
 
 Look at the commits since the last release to help you write the release notes. Use this command: `git log v2.0.9..HEAD`
 
+TODO(eaftan): Script writing the release notes.
+
 ## Optional
 
 ### Update IDEA plugin
