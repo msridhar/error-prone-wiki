@@ -107,17 +107,21 @@ Sample commit: https://github.com/google/error-prone/commit/739c6c155827209fcbee
 
 > TIP: Do this in the Google-internal version, not Github, to avoid two-way syncing issues.
 
-## Tell the world
+## Write release notes
 
-Write release notes (see [this example](https://groups.google.com/d/msg/error-prone-announce/-f6Cv6jKvig/cFCdhYuC5lwJ)) and email them to `error-prone-announce@googlegroups.com` and `error-prone-discuss@googlegroups.com`.  
-
-Look at the commits since the last release to help you write the release notes. Use this command: `git log v2.0.9..HEAD`
+Write release notes and update the git tag with those release notes.  Look at the commits since the last release to help you write them. Use this command: `git log v2.0.9..HEAD`
 
 TODO(eaftan): Script writing the release notes.
 
 > Tip: Extract interesting relnotes with `git log v2.2.0..HEAD | grep RELNOTES | grep -vi "n/a\|none"`
 
 > Tip: Find issues fixed with `git log v2.2.0..HEAD | grep -o "#[0-9]\+" | sort | tr '\n' ',' | sed 's/,/, /'g`
+
+Example release notes: https://github.com/google/error-prone/releases/tag/v2.3.0
+
+## Tell the world
+
+Email `error-prone-announce@googlegroups.com` and `error-prone-discuss@googlegroups.com` and point them to the release notes.  
 
 ## Optional
 
