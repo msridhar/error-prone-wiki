@@ -98,9 +98,9 @@ Update the version of the error_prone_core dependency in the various examples to
 
 ```shell
 OLD="2\.0\.0"; NEW="2\.0\.0"
-sed -i "s/$OLD/$NEW/g" examples/ant/ant_fork/build.xml examples/gradle/build.gradle examples/maven/pom.xml examples/plugin/bazel/WORKSPACE examples/plugin/gradle/build.gradle examples/plugin/gradle/sample_plugin/build.gradle examples/plugin/maven/hello/pom.xml examples/plugin/maven/sample_plugin/pom.xml
+sed -i "s/$OLD/$NEW/g" examples/ant/ant_fork/build.xml examples/gradle/build.gradle examples/maven/pom.xml examples/plugin/bazel/WORKSPACE examples/plugin/gradle/build.gradle examples/plugin/gradle/sample_plugin/build.gradle examples/plugin/maven/hello/pom.xml examples/plugin/maven/sample_plugin/pom.xml examples/refaster/README.md
 OLD_SNAPSHOT="2\.0\.1-SNAPSHOT"; NEW_SNAPSHOT="2\.0\.2-SNAPSHOT"
-sed -i "s/$OLD_SNAPSHOT/$NEW_SNAPSHOT/g" examples/ant/ant_fork/build.xml examples/gradle/build.gradle examples/maven/pom.xml examples/plugin/bazel/WORKSPACE examples/plugin/gradle/build.gradle examples/plugin/gradle/sample_plugin/build.gradle examples/plugin/maven/hello/pom.xml examples/plugin/maven/sample_plugin/pom.xml
+sed -i "s/$OLD_SNAPSHOT/$NEW_SNAPSHOT/g" examples/ant/ant_fork/build.xml examples/gradle/build.gradle examples/maven/pom.xml examples/plugin/bazel/WORKSPACE examples/plugin/gradle/build.gradle examples/plugin/gradle/sample_plugin/build.gradle examples/plugin/maven/hello/pom.xml examples/plugin/maven/sample_plugin/pom.xml examples/refaster/README.md
 ```
 
 Sample commit: https://github.com/google/error-prone/commit/739c6c155827209fcbee7f056381415e31094768
