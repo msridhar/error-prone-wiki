@@ -68,6 +68,12 @@ First, supply your SSH passphrase to avoid getting asked while running Maven com
 ssh-add
 ```
 
+Sync to the commit from which you want to build the release (if necessary).
+
+```shell
+git checkout -b release-branch <commit-hash>
+```
+
 Look at the pom.xml file to see what version is being snapshotted, e.g. 2.0.1-SNAPSHOT means we want to release 2.0.1.
 
 As long as we're using the JUnit 13 SNAPSHOT, pass `-DignoreSnapshots=true` to `release:prepare`.
