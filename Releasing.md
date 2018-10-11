@@ -10,7 +10,7 @@ If the build is broken, then we can't do a release. Keep the build green!
 
 ### GnuPG
 
-We sign the released artifacts with GnuPG, so you'll need gpg on your path, and also a default key installed (run `gpg --gen-key`). You also need to upload your ASCII-armored public key to a common repo like http://pgp.mit.edu.
+We sign the released artifacts with GnuPG, so you'll need gpg on your path, and also a default key installed (run `gpg --gen-key`). You also need to upload your ASCII-armored public key to a common repo like http://keys.gnupg.net.
 
 If you want a chance to remember your gpg key before starting `mvn release`, you can use the following incantation. (Courtesy of [SO](http://stackoverflow.com/a/11484411).)
 
@@ -60,6 +60,8 @@ Currently we build the output JARs with JDK8. You can check what JDK version Mav
 
 ## Releasing
 
+### Build and Stage the Release
+
 First, supply your SSH passphrase to avoid getting asked while running Maven commands: 
 
 ```shell
@@ -78,12 +80,27 @@ mvn release:perform
 
 Now the release is "staged" at Sonatype.
 
-Go to https://oss.sonatype.org and login, then take a look at the staged artifacts. Check that the right classes appear in the right jars, and the sizes are reasonable.
+#### Troubleshooting
+
+If you get any error messages, make sure you have your ssh key and gpg key set up properly.
+
+If the release build is interrupted by an error, you will need to clean up the changes that maven already made to set up the release before trying again.
+
+```shell
+git add -A
+git reset --hard
+```
+
+### Release to Sonatype
+
+Go to https://oss.sonatype.org and login, then take a look at the [staged artifacts](https://oss.sonatype.org/#stagingRepositories). Check that the right classes appear in the right jars, and the sizes are reasonable.
 
 Then, "close" and then "release" the staging repository to make the release public. ([more instructions](https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-8.ReleaseIt
 ) in case you run into trouble.)
 
-If you get a key error, you might need to upload this output to http://pgp.mit.edu: `gpg -a --export`
+#### Troubleshooting
+
+If you get a key error, you might need to upload this output to http://keys.gnupg.net: `gpg -a --export` (Allow a few minutes to propagate). If it still doesn't work, try uploading the key to another keyserver. You can search your keyserver for the hash in the Sonatype error message to see if it uploaded yet.
 
 ### Update installation instructions
 
@@ -98,9 +115,9 @@ Update the version of the error_prone_core dependency in the various examples to
 
 ```shell
 OLD="2\.0\.0"; NEW="2\.0\.0"
-sed -i "s/$OLD/$NEW/g" examples/ant/ant_fork/build.xml examples/gradle/build.gradle examples/maven/pom.xml examples/plugin/bazel/WORKSPACE examples/plugin/gradle/build.gradle examples/plugin/gradle/sample_plugin/build.gradle examples/plugin/maven/hello/pom.xml examples/plugin/maven/sample_plugin/pom.xml examples/refaster/README.md
+sed -i "s/$OLD/$NEW/g" examples/ant/build.xml examples/maven/pom.xml examples/plugin/bazel/WORKSPACE examples/plugin/gradle/build.gradle examples/plugin/gradle/sample_plugin/build.gradle examples/plugin/maven/hello/pom.xml examples/plugin/maven/sample_plugin/pom.xml examples/refaster/README.md
 OLD_SNAPSHOT="2\.0\.1-SNAPSHOT"; NEW_SNAPSHOT="2\.0\.2-SNAPSHOT"
-sed -i "s/$OLD_SNAPSHOT/$NEW_SNAPSHOT/g" examples/ant/ant_fork/build.xml examples/gradle/build.gradle examples/maven/pom.xml examples/plugin/bazel/WORKSPACE examples/plugin/gradle/build.gradle examples/plugin/gradle/sample_plugin/build.gradle examples/plugin/maven/hello/pom.xml examples/plugin/maven/sample_plugin/pom.xml examples/refaster/README.md
+sed -i "s/$OLD_SNAPSHOT/$NEW_SNAPSHOT/g" examples/ant/build.xml examples/maven/pom.xml examples/plugin/bazel/WORKSPACE examples/plugin/gradle/build.gradle examples/plugin/gradle/sample_plugin/build.gradle examples/plugin/maven/hello/pom.xml examples/plugin/maven/sample_plugin/pom.xml examples/refaster/README.md
 ```
 
 Sample commit: https://github.com/google/error-prone/commit/739c6c155827209fcbee7f056381415e31094768
