@@ -15,7 +15,7 @@ We sign the released artifacts with GnuPG, so you'll need gpg on your path, and 
 If you want a chance to remember your gpg key before starting `mvn release`, you can use the following incantation. (Courtesy of [SO](http://stackoverflow.com/a/11484411).)
 
 ```
-$ echo "1234" | gpg --no-use-agent -o /dev/null --local-user "Your Name <you@example.com>" -as - && echo "The correct passphrase was entered for this key"
+$ gpg -o /dev/null --local-user "Your Name <you@example.com>" -as <(echo 1234) && echo "The correct passphrase was entered for this key"
 ```
 
 ### Sonatype
