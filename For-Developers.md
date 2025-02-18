@@ -3,8 +3,44 @@
 We use the Maven build system. We are using version 3. 
 [Download Maven](http://maven.apache.org/download.html)
 
-We test with OpenJDK 7 and 8, so those are currently recommended. Do whatever
-your system requires to use one of those JDKs.
+Error Prone requires JDK 17 or higher to build.  Additionally, you must have certain JDK versions configured in your `~/.m2/toolchains.xml` to successfully build Error Prone and run tests.  At a minimum, it should have `toolchain` entries for JDK 17, JDK 25 ea (available from [here](https://jdk.java.net/25/)), and whatever JDK version you use to run Maven.  Here is an example `toolchains.xml` file you can edit and use, which works if you are running Maven on JDK 21:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<toolchains xmlns="http://maven.apache.org/TOOLCHAINS/1.1.0"
+            xsi:schemaLocation="http://maven.apache.org/TOOLCHAINS/1.1.0 http://maven.apache.org/xsd/toolchains-1.1.0.xsd"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <toolchain>
+        <type>jdk</type>
+        <provides>
+            <version>21</version>
+        </provides>
+        <configuration>
+            <jdkHome>/path/to/jdk21</jdkHome>
+        </configuration>
+    </toolchain>
+    <toolchain>
+        <type>jdk</type>
+        <provides>
+            <version>25</version>
+        </provides>
+        <configuration>
+            <jdkHome>/path/to/jdk25</jdkHome>
+        </configuration>
+    </toolchain>
+    <toolchain>
+        <type>jdk</type>
+        <provides>
+            <version>17</version>
+        </provides>
+        <configuration>
+            <jdkHome>/path/to/jdk17</jdkHome>
+        </configuration>
+    </toolchain>
+</toolchains>
+```
+
+The required JDK versions may change over time; check out which versions are installed in [the CI configuration](https://github.com/google/error-prone/blob/master/.github/workflows/ci.yml) to get the latest information.
 
 Build the library:
 <pre>
